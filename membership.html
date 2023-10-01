@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="custom.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <a href="#"><i class='bx bx-carousel' id="logo-pic"></i><span class="li-text" id="logo-name">Rui's Gym</span></a>
+        </div>
+        <div class="sidebar-li">
+        <ul class="sidebar-ul">
+            <li ><a href="index.html"><i class='bx bx-home'></i><span class="li-text">Home</span></a></li>
+            <li id="active"><a href="membership.html"><i class='bx bx-check-square'></i></i><span class="li-text">Membership</span></a></li>
+            <li><a href="#"><i class='bx bx-bell'></i><span class="li-text">Notification</span></a></li>
+            <li><a href="membership.html"><i class='bx bx-wallet-alt'></i><span class="li-text">Payments</span></a></li>
+            <li><a href="inventory.html"><i class='bx bx-box' ></i><span class="li-text">Inventory</span></a></li>
+            <li><a href="staff.html"><i class='bx bx-group' ></i><span class="li-text">Staff</span></a></li>
+            <li><a href="report.html"><i class='bx bx-line-chart'></i><span class="li-text">Reports</span></a></li>
+            <li><a href="membership.html"><i class='bx bx-cog'></i><span class="li-text">Settings</span></a></li>
+            <li><a href="help.html"><i class='bx bx-receipt'></i><span class="li-text">Support/Help</span></a></li>
+        </ul>
+        </div>
+        <div class="logout"><a href="http://"><i class='bx bx-log-out-circle' ></i><span class="li-text">Logout</span></a></div>
+    </div>
+    
+    <div class="right">
+        <nav class="top-nav">
+            <div class="sidebar-button" id="ham-button"><a href="#"><i class='bx bx-list-ul toggle'></i></a></div>
+            <div class="navbar-profile"><a href="#"><i class='bx bx-user' ></i><span class="nav-profile-text">Rouel Quilantang</span></a></div>
+        </nav>
+        <main>
+            
+                <div class="welcome">
+                    <h1>Membership</h1>
+                </div>
+        </main>
+                <div class="content" id="content-membership">
+                <div class="register-show">
+                    <div class="form">
+                        <h2>Registration</h2><br>
+                        <form action="" onsubmit="return submitForm()">
+                            <div class="name">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingname" placeholder="First Name">
+                                    <label for="floatingPassword">First Name</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Last Name">
+                                    <label for="floatingPassword">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="name">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="floatingage" placeholder="First Name">
+                                    <label for="floatingPassword">Age</label>
+                                </div>
+                                <div class="form-floating">
+                                <input type="date" name="date-registraiton" id="date-registration" placeholder="Select"required>
+                                </div>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="floatingcontact" placeholder="Contact Number">
+                                <label for="floatingPassword">Contact Number</label>
+                                
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingemail" placeholder="Email Address">
+                                <label for="floatingPassword">Email Address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingadd" placeholder="Home Address">
+                                <label for="floatingPassword">Home Address</label>
+                            </div>
+                            
+                            <div class="submit">
+                                <input type="submit" value="Register">
+                                
+                            </div><br>
+                            
+                        </form>
+                    </div>
+                    <div class="members-show">
+                        <h2>Registered Members</h2><br>
+                        <div class="search">
+                            <input type="search" name="search" id="search">
+                            <input type="submit" value="Search" id="search-btn">
+                        </div><br>
+                        
+                        <div class="table">
+                            <table class="table table-hover">
+                                <thead>
+                                    
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Date</th>
+                                        <th>Contact</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>30</td>
+                                        <td>2023-09-30</td>
+                                        <td>(123) 456-7890</td>
+                                        <td>john@example.com</td>
+                                        <td>123 Main St, City</td>
+                                        <td><div class="action"><a href="#" onclick="viewMember()"><i class='bx bx-show'></i></a><a href="#"><i class='bx bx-edit-alt' id="edit" onclick="editMember()"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>30</td>
+                                        <td>2023-09-30</td>
+                                        <td>(123) 456-7890</td>
+                                        <td>john@example.com</td>
+                                        <td>123 Main St, City</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jane Smith</td>
+                                        <td>25</td>
+                                        <td>2023-09-30</td>
+                                        <td>(456) 789-1234</td>
+                                        <td>jane@example.com</td>
+                                        <td>456 Elm St, Town</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>35</td>
+                                        <td>2023-09-29</td>
+                                        <td>(789) 123-4567</td>
+                                        <td>michael@example.com</td>
+                                        <td>789 Oak St, Village</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>30</td>
+                                        <td>2023-09-30</td>
+                                        <td>(123) 456-7890</td>
+                                        <td>john@example.com</td>
+                                        <td>123 Main St, City</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jane Smith</td>
+                                        <td>25</td>
+                                        <td>2023-09-30</td>
+                                        <td>(456) 789-1234</td>
+                                        <td>jane@example.com</td>
+                                        <td>456 Elm St, Town</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>35</td>
+                                        <td>2023-09-29</td>
+                                        <td>(789) 123-4567</td>
+                                        <td>michael@example.com</td>
+                                        <td>789 Oak St, Village</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Susan Williams</td>
+                                        <td>28</td>
+                                        <td>2023-09-28</td>
+                                        <td>(234) 567-8901</td>
+                                        <td>susan@example.com</td>
+                                        <td>234 Maple St, County</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Brown</td>
+                                        <td>40</td>
+                                        <td>2023-09-27</td>
+                                        <td>(345) 678-9012</td>
+                                        <td>david@example.com</td>
+                                        <td>345 Pine St, Town</td>
+                                        <td><div class="action"><a href="show-member.html"><i class='bx bx-show'></i></a><a href="show-member"><i class='bx bx-edit-alt' id="edit"></i></a><a href="#" onclick="deleteMember()"><i class='bx bx-trash' id="trash"></i></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+        
+    </div>
+    <script>
+        
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+        }    
+            
+    </script>
+    <script src="./sidebar.js"></script>
+    <script src="./confirmation.js"></script>
+    <script src="./bootstrap.min.js"></script>
+</body>
+</html>
